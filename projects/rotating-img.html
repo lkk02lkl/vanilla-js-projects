@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotating Image Gallery</title>
+
+  </head>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      justify-content: center;
+      background-color: black;
+      overflow: hidden;
+    }
+
+    .image-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateY(0deg);
+      transition: transform 0.7s;
+    }
+
+    .image-container span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    }
+
+    .image-container span img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+
+    .btn-container {
+      position: relative;
+      width: 80%;
+    }
+
+    .btn {
+      position: absolute;
+      bottom: -80px;
+      background-color: slateblue;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      filter: brightness(1.5);
+    }
+
+    #prev {
+      left: 20%;
+    }
+
+    #next {
+      right: 20%;
+    }
+  </style>
+  <body>
+    <div class="image-container">
+      <span style="--i: 1">
+        <img src="https://picsum.photos/id/237/300/200" />
+      </span>
+      <span style="--i: 2">
+        <img src="https://picsum.photos/id/23/300/200" />
+      </span>
+      <span style="--i: 3">
+        <img src="https://picsum.photos/id/48/300/200" />
+      </span>
+      <span style="--i: 4">
+        <img src="https://picsum.photos/id/12/300/200" />
+      </span>
+      <span style="--i: 5">
+        <img src="https://picsum.photos/id/59/300/200" />
+      </span>
+      <span style="--i: 6">
+        <img src="https://picsum.photos/id/160/300/200" />
+      </span>
+      <span style="--i: 7">
+        <img src="https://picsum.photos/id/370/300/200" />
+      </span>
+      <span style="--i: 8">
+        <img src="https://picsum.photos/id/478/300/200" />
+      </span>
+    </div>
+    <div class="btn-container">
+      <button class="btn" id="prev">Prev</button>
+      <button class="btn" id="next">Next</button>
+    </div>
+    <script src="/rotating-img.js"></script>
+  </body>
+</html>
