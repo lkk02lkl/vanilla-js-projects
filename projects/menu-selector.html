@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Selector Menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+        font-family: sans-serif;
+        background: linear-gradient(135deg, purple 20%, orange 80%);
+      }
+
+      .menu {
+        background: lightgrey;
+        width: 300px;
+        opacity: 0.3;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .menu .fas{
+          transition: transform .2s;
+      }
+
+      .menu p {
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .social-lists {
+        background: lightgray;
+        width: 300px;
+        padding: 10px;
+        opacity: 0.3;
+        list-style-type: none;
+        border-radius: 5px;
+      }
+
+      .social-lists li {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: padding 0.2s linear;
+      }
+
+      .social-lists li:hover {
+        background: darkgray;
+        border-radius: 5px;
+        padding-left: 10px;
+      }
+
+      .social-lists li .fab {
+        margin: 0 10px;
+      }
+
+      .rotate .fas {
+        transform: rotate(180deg);
+      }
+
+      .hide {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <p>Social Media</p>
+      <i class="fas fa-angle-down"></i>
+    </div>
+    <ul class="social-lists hide">
+      <li>
+        <i class="fab fa-facebook" style="color: blue"></i>
+        <p>Facebook</p>
+      </li>
+      <li>
+        <i class="fab fa-youtube" style="color: red"></i>
+        <p>YouTube</p>
+      </li>
+      <li>
+        <i class="fab fa-twitter" style="color: blue"></i>
+        <p>Twitter</p>
+      </li>
+      <li>
+        <i class="fab fa-linkedin" style="color: blue"></i>
+        <p>Linkedin</p>
+      </li>
+    </ul>
+    <script src="/menu-selector.js"></script>
+  </body>
+</html>
